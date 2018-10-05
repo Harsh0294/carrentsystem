@@ -1,8 +1,5 @@
 import sys
-from PyQt4 import QtCore, QtGui
-from Vehicles import *
-from Users import *
-from gui.LoginScreen import LoginScreen
+
 
 # list of users of the system
 user_list = []
