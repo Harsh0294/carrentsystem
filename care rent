@@ -1,0 +1,64 @@
+from datetime import timedelta, datetime
+
+
+def RentalDate():
+    isValid = False
+    while not isValid:
+        RentalDate = input("Type Rental Date: mm/dd/yy: ")
+        try:
+            rd = datetime.strptime(RentalDate, "%m/%d/%y")
+            isValid = True
+        except:
+            print("Invalid Format!\n")
+            break
+    return rd
+
+
+# t = (RentalDate() - datetime.now()).total_seconds()
+trd = (RentalDate())
+
+
+# print(t)
+
+
+def ReturnDate():
+    isValid = False
+    while not isValid:
+        ReturnRental = input("Type Date: mm/dd/yy: ")
+        try:
+            rrl = datetime.strptime(ReturnRental, "%m/%d/%y")
+            isValid = True
+        except:
+            print("Invalid Format!\n")
+            break
+    return rrl
+
+
+# r = (ObtainDate() - datetime.now()).total_seconds()
+rrd = (ReturnDate())
+
+
+# print(rrd)
+
+def main():
+    print("Car Rental Program \n")
+    totaldays = (RentalDate() - ReturnDate()).days
+    x = (RentalDate())
+    m = (ReturnDate())
+    print(totaldays)
+    tarriff = 65.00
+    if totaldays < 5:
+        mytotal = tarriff * totaldays
+        print(mytotal)
+    else:
+        print("Ok")
+
+    print("RENT DATE: ", x)
+    print("RETURN DATE: ", m)
+    # print("TARIFF PER DAY: ", locale.currency(tariff), tariff_msg)
+    print("TOTAL DAYS: ", totaldays)
+    print("TOTAL COST: ", mytotal)
+    print()
+
+
+main()
